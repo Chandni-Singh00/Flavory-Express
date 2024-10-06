@@ -11,9 +11,10 @@ function MainContainer() {
   const [{foodItems,cartShow},dispatch]=useStateValue();
 
   const [scrollvalue,setScrollValue]=useState(0);
+  const [togle,settoggle]=useState(false);
   
   useEffect(()=>{},[scrollvalue]);
-
+console.log(togle)
   return (
     <div className="w-full h-auto flex flex-col items-center justify-center ">
       <Home />
@@ -36,7 +37,8 @@ function MainContainer() {
         <RowContainer scrollValue={scrollvalue}  flag={false} data={foodItems?.filter(n=>n.category==='fruits')}/>
       </section>
 
-        <MenuContainer/>
+<button className=""  onClick={()=>{settoggle(true)}}>Menu Container</button>
+        {togle && (<MenuContainer/> )}
 
 
        {cartShow &&  (<CartContainer/>)}

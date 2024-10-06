@@ -19,7 +19,7 @@ function Header() {
   const login = async () => {
     if (!user) {
       const {
-        user: { refreshToken, providerData },
+        user: { providerData },//here was user: { refreshToken ,providerData }
       } = await signInWithPopup(firebaseAuth, provider);
       dispatch({
         type: actionType.SET_USER,
@@ -62,9 +62,12 @@ function Header() {
             exit={{ opacity: 0, x: 200 }}
             className="flex items-center gap-8 ml-auto"
           >
+            <Link to={"/"}>
             <li className="text-base text-gray-500 cursor-pointer hover:text-red-300 duration-100 transition-all ease-in-out ">
               Home
             </li>
+            </Link>
+           
             <li className="text-base text-gray-500 cursor-pointer hover:text-red-300 duration-100 transition-all ease-in-out ">
               Menu
             </li>

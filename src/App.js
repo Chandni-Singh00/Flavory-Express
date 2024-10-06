@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useStateValue } from "./utils/StateProvider";
 import { getAllFoodItems } from "./utils/firebaseFunctions";
 import { useEffect } from "react";
+import img from "../src/assets/pexels-tyler-lastovich-1275929 2.png"
 import reducer from "./utils/Reducer";
 function App() {
   const [{foodItems}, dispatch] = useStateValue();
@@ -37,6 +38,11 @@ function App() {
         </BrowserRouter>
       </div>
     </AnimatePresence>
+
+  
+
+
+   
   );
 }
 
